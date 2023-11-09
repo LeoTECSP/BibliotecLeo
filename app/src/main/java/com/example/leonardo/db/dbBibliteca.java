@@ -45,4 +45,45 @@ public class dbBibliteca extends dbHelper{
 
 
     }
+
+
+
+    //Buscar un ISBN que sea como este
+    public long eliminarLibro (int ISBN)
+    {
+
+        //COntext para consultas de SQLite
+        dbHelper DBHelper = new dbHelper(context);
+        SQLiteDatabase db = DBHelper.getWritableDatabase();
+
+
+        //La tabla con la que trabajamos, el segundo es la clausula where, ponemos lo que coincida con la caja
+
+        //Se deja nulo porque en WHERE
+        long id = db.delete(DATABASE_TABLE,"ISBN = " + ISBN,null);
+        return id;
+
+
+
+    }
+
+
+    public long modificarlibro (Integer ISBN, String titulo, String autor, String editorial, String genero, Integer añopublicacion, Integer paginas)
+    {
+        dbHelper DBhelper = new dbHelper(context);
+        SQLiteDatabase db = DBhelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("TITULO", titulo);
+        values.put("AUTOR", autor);
+        values.put("EDITORIAL", editorial);
+        values.put("GENERO", genero);
+        values.put("A_PUBLICACION", añopublicacion);
+        values.put("NO_PAGINAS", paginas);
+
+        long id = db.update(DATABASE_TABLE, values, "ISBN = " + ISBN, null);
+        return id;
+    }
+
+
 }

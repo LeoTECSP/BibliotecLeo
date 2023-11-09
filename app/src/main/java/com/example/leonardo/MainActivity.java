@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        EditText txtGenero, txtAutor, txtEditorial, txtPublicacion, txtPaginas, txtTitulo;
+        EditText txtGenero, txtAutor, txtEditorial, txtPublicacion, txtPaginas, txtTitulo, txtISBN;
 
         //Mandar los valores de las casillas a las variables editext
 
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         txtPaginas = findViewById(R.id.txtPaginas);
         txtPublicacion = findViewById(R.id.txtPublicacion);
         txtGenero = findViewById(R.id.txtGenero);
-
+        txtISBN = findViewById(R.id.txtISBN);
+        Button btnModificar = findViewById(R.id.superboton);
         Button btnGuardar = findViewById(R.id.button);
 
 
@@ -71,11 +72,66 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "ERROR AL CREAR BASE DE DATOS", Toast.LENGTH_SHORT).show();
                 }
 
-
-
-
             }
         });
+
+        Button btnBorrar = findViewById(R.id.btnBorrar);
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbBibliteca DBBibliteca = new dbBibliteca(MainActivity.this);
+                long id = DBBibliteca.eliminarLibro(
+                        Integer.parseInt((txtISBN.getText().toString())));
+
+
+                if(id>0)
+                {
+                    Toast.makeText(MainActivity.this, "Borrado exitosamente", Toast.LENGTH_SHORT).show();
+                }
+                else{
+
+                    Toast.makeText(MainActivity.this, "ERROR AL BORRAR", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
+
+
+
+
+                btnModificar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        dbBibliteca DBbiblioteca = new dbBibliteca(MainActivity.this);
+                        long id = DBbiblioteca.modificarlibro
+                                (Integer.parseInt(String.valueOf(txtISBN.getText())), txtTitulo.getText().toString(), txtAutor.getText().toString(),
+                                        txtEditorial.getText().toString(), txtGenero.getText().toString(),
+                                        Integer.valueOf(txtPublicacion.getText().toString()),
+                                        Integer.parseInt(String.valueOf(txtPaginas.getText())));
+
+                        if (id > 0)
+                        {
+                            Toast.makeText(MainActivity.this, "Registro Modificado", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(MainActivity.this, "algo salio mal", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
     }
 
 

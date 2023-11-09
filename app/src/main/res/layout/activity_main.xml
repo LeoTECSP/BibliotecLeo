@@ -16,85 +16,105 @@
 
         <EditText
             android:id="@+id/txtGenero"
-            android:layout_width="368dp"
+            android:layout_width="match_parent"
             android:layout_height="47dp"
             android:ems="10"
             android:hint="Genero"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="149dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="149dp" />
 
         <EditText
             android:id="@+id/txtAutor"
-            android:layout_width="365dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:ems="10"
             android:hint="Autor"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="227dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="227dp" />
 
         <EditText
             android:id="@+id/txtEditorial"
-            android:layout_width="363dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:ems="10"
             android:hint="Editorial"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="297dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="297dp" />
 
         <EditText
             android:id="@+id/txtPublicacion"
-            android:layout_width="363dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:ems="10"
             android:hint="Año Publicacion"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="372dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="372dp" />
 
         <EditText
             android:id="@+id/txtPaginas"
-            android:layout_width="363dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:ems="10"
             android:hint="No. Paginas"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="456dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="456dp" />
 
         <EditText
             android:id="@+id/txtTitulo"
-            android:layout_width="365dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
             android:ems="10"
             android:hint="Titulo"
             android:inputType="text"
             android:text=""
+            tools:ignore="MissingConstraints"
             tools:layout_constraintEnd_toEndOf="parent"
             tools:layout_constraintHorizontal_bias="0.347"
             tools:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="60dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="60dp" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="401dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Guardar"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="160dp"
             tools:layout_editor_absoluteY="590dp" />
+
+        <EditText
+            android:id="@+id/txtISBN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ISBN"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:text="Borrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/superboton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar" />
 
 </LinearLayout>
